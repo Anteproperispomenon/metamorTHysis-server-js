@@ -53,25 +53,26 @@ type ToJS myApi = (SF.HasForeign SF.NoTypes SF.NoContent myApi, SF.GenerateList 
 --
 --   ...where @MyAPI@ is the name of the type 
 --   of your API.
-generateJS :: forall (myApi :: Kind.Type). (ToJS myApi) => Q ()
+generateJS :: forall (myApi :: Kind.Type). (ToJS myApi) => Q [Dec]
 generateJS = generateJs @myApi
 
 -- | Synonym for `generateJS`.
-generateJs :: forall (myApi :: Kind.Type). (ToJS myApi) => Q ()
+generateJs :: forall (myApi :: Kind.Type). (ToJS myApi) => Q [Dec]
 generateJs = generateJsAt @myApi "static/run_convert.js"
 
 -- | Like `generateJS`, but allows you to specify
 --   where you want to place the resulting JS file.
 --   Be careful; this function will automatically
 --   overwrite the file in question.
-generateJsAt :: forall (myApi :: Kind.Type). (ToJS myApi) => FilePath -> Q ()
+generateJsAt :: forall (myApi :: Kind.Type). (ToJS myApi) => FilePath -> Q [Dec]
 generateJsAt fp = generateJsAt' @myApi fp (Proxy :: Proxy myApi)
 
-generateJsAt' :: forall (myApi :: Kind.Type). (ToJS myApi) => FilePath -> Proxy myApi -> Q ()
+generateJsAt' :: forall (myApi :: Kind.Type). (ToJS myApi) => FilePath -> Proxy myApi -> Q [Dec]
 generateJsAt' fp prox = do
   let myText = jsForAPI prox vanillaJS
       myBS   = TE.encodeUtf8 myText
   runIO $ checkAndOverwrite myBS fp
+  return []
 
 -- | Overwrite a file if the contents don't match.
 checkAndOverwrite :: BS.ByteString -> FilePath -> IO ()
