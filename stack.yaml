@@ -40,7 +40,9 @@ packages:
 # - git: https://github.com/commercialhaskell/stack.git
 #   commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a
 #
-# extra-deps: []
+extra-deps: 
+  - file-io-0.1.1@sha256:6d44c356e9dbca4c6e4397bce534ea15cc37183446b9ee8087bb81502b12b5de,3091
+  - servant-js-0.9.4.2@sha256:aa675b06e43c3182b6eb4efe44d0ab88334ce4fd89c31fec61582d2870893c16,3571
 
 # Override default flag values for local packages and extra-deps
 # flags: {}

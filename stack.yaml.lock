@@ -3,11 +3,25 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages: []
+packages:
+- completed:
+    hackage: file-io-0.1.1@sha256:6d44c356e9dbca4c6e4397bce534ea15cc37183446b9ee8087bb81502b12b5de,3091
+    pantry-tree:
+      size: 709
+      sha256: 44883e5bef1e633048c17003c65e04331790e2540f5d3a7f527ef2be8f224b50
+  original:
+    hackage: file-io-0.1.1@sha256:6d44c356e9dbca4c6e4397bce534ea15cc37183446b9ee8087bb81502b12b5de,3091
+- completed:
+    hackage: servant-js-0.9.4.2@sha256:aa675b06e43c3182b6eb4efe44d0ab88334ce4fd89c31fec61582d2870893c16,3571
+    pantry-tree:
+      size: 961
+      sha256: 9c86eea630b862164ec0a36fd51938e9c7ae566f2bb53d22aed3352d810df458
+  original:
+    hackage: servant-js-0.9.4.2@sha256:aa675b06e43c3182b6eb4efe44d0ab88334ce4fd89c31fec61582d2870893c16,3571
 snapshots:
 - completed:
-    sha256: 28a863b358647f2d952fe7085ba11561aeb63eca6bc6fd1ce8fcf1cfe63717f5
-    size: 719127
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/22/24.yaml
+    size: 712469
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/22/11.yaml
+    sha256: 2fdd7d3e54540062ef75ca0a73ca3a804c527dbf8a4cadafabf340e66ac4af40
   original:
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/22/24.yaml
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/22/11.yaml

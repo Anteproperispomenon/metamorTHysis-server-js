@@ -24,6 +24,7 @@ default-extensions:
 - DataKinds
 - FlexibleInstances
 - ImportQualifiedPost
+- KindSignatures
 - LambdaCase
 - MultiWayIf
 - OverloadedStrings
@@ -36,8 +37,13 @@ dependencies:
 - aeson
 - bytestring
 - containers
+- directory
+- file-io
+- filepath
 - lift-type
 - servant
+- servant-foreign
+- servant-js
 - servant-server
 - template-haskell
 - text
